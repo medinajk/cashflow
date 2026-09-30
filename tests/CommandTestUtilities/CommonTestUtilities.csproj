@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="35.6.5" />
     <PackageReference Include="Microsoft.OpenApi" Version="3.10.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CashFlow.Communication\CashFlow.Communication.csproj" />
   </ItemGroup>
 
 </Project>

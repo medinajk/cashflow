@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/CashFlow.Api/CashFlow.Api.csproj" />
+    <Project Path="src/CashFlow.Application/CashFlow.Application.csproj" />
+    <Project Path="src/CashFlow.Communication/CashFlow.Communication.csproj" />
+    <Project Path="src/CashFlow.Domain/CashFlow.Domain.csproj" />
+    <Project Path="src/CashFlow.Exception/CashFlow.Exception.csproj" />
+    <Project Path="src/CashFlow.Infrastructure/CashFlow.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CommandTestUtilities/CommonTestUtilities.csproj" Id="f5dfc45f-4e4c-412c-99a5-27e005152a83" />
+    <Project Path="tests/Validators.Tests/Validators.Tests.csproj" Id="ee0d9999-afb7-4ec1-a437-72622d65c4ea" />
+  </Folder>
+</Solution>
