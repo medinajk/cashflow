@@ -25,13 +25,16 @@ namespace Validators.Tests.Expenses.Register
             // Verificar documentação do FluentAssertions
             result.IsValid.Should().BeTrue();
         }
-        [Fact]
-        public void Error_Title_Empty()
+        [Theory]
+        [InlineData("")]
+        [InlineData("         ")]
+        [InlineData(null)]
+        public void Error_Title_Empty(string title)
         {
             // Arrange - instancia o validator
             var validator = new RegisterExpenseValidator();
             var request = RequestRegisterExpenseJsonBuilder.Build();
-            request.Title = string.Empty;
+            request.Title = title;
 
             // act - chama o método de validação
             var result = validator.Validate(request);
