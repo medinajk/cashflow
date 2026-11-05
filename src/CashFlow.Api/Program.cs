@@ -2,6 +2,7 @@
 
 using CashFlow.Api.Filters;
 using CashFlow.Api.Middleware;
+using CashFlow.Application;
 using CashFlow.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,11 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 // typeof -> o objeto é criado DEPOIS, só quando uma exceção ocorrer
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter))); // adiciona o ExceptionFilter como um filtro global. Sem essa linha, o ExceptionFilter existe mas nunca seria chamado.
 
-
-builder.Services.AddInfraestructure();
+builder.Services.AddInfraestructure(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

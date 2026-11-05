@@ -7,13 +7,15 @@ namespace CashFlow.Infrastructure.DataAccess.Repositories
     // como Internal para garantir que esse repositório seja visível apenas aqui.
     internal class ExpensesRepository : IExpensesRepository
     {
-        public void Add(Expense expense)
+        private readonly CashflowDbContext _dbContext;
+        public ExpensesRepository(CashflowDbContext dbContext)
         {
-            var dbContext = new CashflowDbContext();
+            _dbContext = dbContext;
+        }
 
-            dbContext.Expenses.Add(expense);
-
-            dbContext.SaveChanges();
+        public async Task Add(Expense expense)
+        {
+            await _dbContext.Expenses.AddAsync(expense);
         }
     }
 }
